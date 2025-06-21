@@ -11,11 +11,6 @@ export default function TodoFilter() {
 
   return (
     <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 p-4 bg-gray-50 rounded-lg">
-      {/* Hiển thị số công việc còn lại */}
-      <div className="text-md text-orange-600">
-        {activeCount > 0 && `${activeCount} công việc chưa hoàn thành`}
-      </div>
-
       {/* Bộ lọc trạng thái */}
       <Radio.Group
         value={filter}
@@ -26,6 +21,13 @@ export default function TodoFilter() {
         <Radio.Button value="active">Chưa hoàn thành</Radio.Button>
         <Radio.Button value="completed">Đã hoàn thành</Radio.Button>
       </Radio.Group>
+
+      {/* Hiển thị số công việc còn lại */}
+      {activeCount > 0 && (
+        <div className="text-md text-orange-600">
+          {activeCount} công việc chưa hoàn thành
+        </div>
+      )}
     </div>
   );
 }
