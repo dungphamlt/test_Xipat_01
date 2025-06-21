@@ -13,7 +13,7 @@ export default function TodoFilter() {
     <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 p-4 bg-gray-50 rounded-lg">
       {/* Hiển thị số công việc còn lại */}
       <div className="text-md text-orange-600">
-        {activeCount} công việc chưa hoàn thành
+        {activeCount > 0 && `${activeCount} công việc chưa hoàn thành`}
       </div>
 
       {/* Bộ lọc trạng thái */}
